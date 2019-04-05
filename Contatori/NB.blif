@@ -1,0 +1,26 @@
+.model NB
+
+.inputs SB
+.outputs ONB3 ONB2 ONB1 ONB0 OEB2 OEB1 OEB0
+
+.names ZERO
+
+#Selezione dal Mux; incrementare o no il contatore
+.subckt MuxG S=SB O3=SUM3 O2=SUM2 O1=SUM1 O0=SUM0
+
+#Prelevo il valore del registro e ci metto il risultato della somma
+.subckt RegB A3=ONB3 A2=ONB2 A1=ONB1 A0=ONB0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
+
+#Somma (4bit) del valore del registro e del mux
+.subckt Sommatore4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 B3=SUM3 B2=SUM2 B1=SUM1 B0=SUM0 C4=ZERO O3=ONB3 O2=ONB2 O1=ONB1 O0=ONB0 COUT=RNB
+
+#Se in overflow, gli ultimi 3 bit indicano l'errore 101
+.subckt MuxEB S=RNB O2=OEB2 O1=OEB1 O0=OEB0
+
+#File vari
+.search ../Multiplexer/MuxGate.blif
+.search ../Registri/RegistroB.blif
+.search ../Sommatori/Sommatore4.blif
+.search ../Multiplexer/MuxErrB.blif
+
+.end
