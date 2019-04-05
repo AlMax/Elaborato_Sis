@@ -1,0 +1,17 @@
+.model MuxR
+
+.inputs S i3 i2 i1 i0
+.outputs O3 O2 O1 O0
+
+.names S i3 O3
+01 1
+.names S i2 O2
+01 1
+.names S i1 O1
+01 1
+
+.names S i3 i2 i1 i0 O0
+0---1 1
+10000 1
+
+.end

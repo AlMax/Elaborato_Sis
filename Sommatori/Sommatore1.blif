@@ -1,0 +1,19 @@
+.model Sommatore1
+
+.inputs A B C1
+.outputs O R
+
+.names A B X
+10 1
+01 1
+
+.names X C1 O
+10 1
+01 1
+
+.names A B C1 R
+11- 1
+1-1 1
+-11 1
+
+.end

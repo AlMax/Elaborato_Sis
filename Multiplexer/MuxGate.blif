@@ -1,0 +1,13 @@
+.model MuxG
+
+.inputs S
+.outputs O3 O2 O1 O0
+
+.names S O3
+.names S O2
+.names S O1
+
+.names S O0
+1 1
+
+.end

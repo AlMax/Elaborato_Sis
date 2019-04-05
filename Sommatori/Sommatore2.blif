@@ -1,0 +1,11 @@
+.model Sommatore2
+
+.inputs A1 A0 B1 B0 C2
+.outputs O1 O0 R2
+
+.subckt Sommatore1 A=A0 B=B0 C1=C2 O=O0 R=CO
+.subckt Sommatore1 A=A1 B=B1 C1=CO O=O1 R=R2
+
+.search ../Sommatori/Sommatore1.blif
+
+.end
