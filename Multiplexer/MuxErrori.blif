@@ -1,9 +1,0 @@
-.model MuxErr
-
-.inputs Zr E2 E1 E0
-.outputs OI
-
-.names Zr E2 E1 E0 OI
-0000 1
-
-.end
