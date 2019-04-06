@@ -1,4 +1,4 @@
-.model Err101
+.model Err110
 
 .inputs S
 .outputs O2 O1 O0
@@ -6,7 +6,7 @@
 .names S O2
 1 1
 .names S O1
-.names S O0
 1 1
+.names S O0
 
 .end

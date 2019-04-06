@@ -1,0 +1,26 @@
+.model ContatoreNC
+
+.inputs SC
+.outputs ONC3 ONC2 ONC1 ONC0
+
+.names ZERO
+
+#Selezione dal Mux; incrementare o no il contatore
+.subckt MuxG S=SC O3=SUM3 O2=SUM2 O1=SUM1 O0=SUM0
+
+#Prelevo il valore del registro e ci metto il risultato della somma
+.subckt RegC A3=ONC3 A2=ONC2 A1=ONC1 A0=ONC0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
+
+#Somma (4bit) del valore del registro e del mux
+.subckt Sommatore4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 B3=SUM3 B2=SUM2 B1=SUM1 B0=SUM0 C4=ZERO O3=NC3 O2=NC2 O1=NC1 O0=NC0 COUT=RNC
+
+#Se c'è un overflow, non riparto da 0000 ma da 0001 al prossimo incremento
+.subckt MuxR S=RNC i3=NC3 i2=NC2 i1=NC1 i0=NC0 O3=ONC3 O2=ONC2 O1=ONC1 O0=ONC0
+
+#File vari
+.search ../Multiplexer/MuxGate.blif
+.search ../Registri/RegistroC.blif
+.search ../Sommatori/Sommatore4.blif
+.search ../Multiplexer/MuxReset.blif
+
+.end
