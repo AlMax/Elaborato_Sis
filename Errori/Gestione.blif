@@ -1,0 +1,21 @@
+.model ErrOut
+
+.inputs Em2 Em1 Em0 V2 V1 V0 Nb2 Nb1 Nb0 Ne2 Ne1 Ne0
+.outputs ON
+
+#Costanti
+.names Z0
+
+#Sommo gli errori allo stato EM e del Volume
+.subckt Sommatore3 A2=Em2 A1=Em1 A0=Em0 B2=V2 B1=V1 B0=V0 C3=Z0 O2=EV2 O1=EV1 O0=EV0 R3=Z1
+.subckt Sommatore3 A2=Nb2 A1=Nb1 A0=Nb0 B2=Ne2 B1=Ne1 B0=Ne0 C3=Z1 O2=BE2 O1=BE1 O0=BE0 R3=Z2
+.subckt Sommatore3 A2=EV2 A1=EV1 A0=EV0 B2=BE2 B1=BE1 B0=BE0 C3=Z2 O2=Err2 O1=Err1 O0=Err0 R3=Z
+
+#Se la somma di tutti gli errori dà 0, allora rimane accesa. Z è usato solo per il fanout.
+.names Z Err2 Err1 Err0 ON 
+0000 1
+
+#File vari
+.search ../Sommatori/Sommatore3.blif
+
+.end
