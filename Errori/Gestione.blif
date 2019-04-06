@@ -16,6 +16,6 @@
 0000 1
 
 #File vari
-.search ../Sommatori/Sommatore3.blif
+.search ../Algebra/Sommatore3.blif
 
 .end

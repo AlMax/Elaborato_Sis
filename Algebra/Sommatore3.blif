@@ -7,6 +7,6 @@
 .subckt Sommatore1 A=A1 B=B1 C1=CO O=O1 R=CO1
 .subckt Sommatore1 A=A2 B=B2 C1=CO1 O=O2 R=R3
 
-.search ../Sommatori/Sommatore1.blif
+.search ../Algebra/Sommatore1.blif
 
 .end

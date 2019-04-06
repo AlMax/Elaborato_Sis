@@ -20,7 +20,7 @@
 #File vari
 .search ../Multiplexer/MuxGate.blif
 .search ../Registri/RegistroF.blif
-.search ../Sommatori/Sommatore4.blif
+.search ../Algebra/Sommatore4.blif
 .search ../Multiplexer/MuxReset.blif
 
 .end
