@@ -1,7 +1,7 @@
-.model Sot9
+.model Sot8
 
-.inputs I8 I7 I6 I5 I4 I3 I2 I1 I0 J8 J7 J6 J5 J4 J3 J2 J1 J0
-.outputs K8 K7 K6 K5 K4 K3 K2 K1 K0 R10
+.inputs I7 I6 I5 I4 I3 I2 I1 I0 J7 J6 J5 J4 J3 J2 J1 J0
+.outputs K7 K6 K5 K4 K3 K2 K1 K0 R9
 
 #Costante 1 e due per lo zero
 .names UNO
@@ -18,7 +18,6 @@
 .subckt Comp1 A=J5 O=NJ5
 .subckt Comp1 A=J6 O=NJ6
 .subckt Comp1 A=J7 O=NJ7
-.subckt Comp1 A=J8 O=NJ8
 
 #Aggiungo 1 per avere il negativo giusto
 .subckt Sommatore1 A=NJ0 B=UNO C1=R1 O=NNJ0 R=RN0
@@ -29,7 +28,6 @@
 .subckt Sommatore1 A=NJ5 B=ZERO C1=RN4 O=NNJ5 R=RN5
 .subckt Sommatore1 A=NJ6 B=ZERO C1=RN5 O=NNJ6 R=RN6
 .subckt Sommatore1 A=NJ7 B=ZERO C1=RN6 O=NNJ7 R=RN7
-.subckt Sommatore1 A=NJ8 B=ZERO C1=RN7 O=NNJ8 R=RN8
 #Riporti a causa della somma
 .subckt Sommatore1 A=I0 B=NNJ0 C1=R1 O=K0 R=R2
 .subckt Sommatore1 A=I1 B=NNJ1 C1=R2 O=K1 R=R3
@@ -38,10 +36,9 @@
 .subckt Sommatore1 A=I4 B=NNJ4 C1=R5 O=K4 R=R6
 .subckt Sommatore1 A=I5 B=NNJ5 C1=R6 O=K5 R=R7
 .subckt Sommatore1 A=I6 B=NNJ6 C1=R7 O=K6 R=R8
-.subckt Sommatore1 A=I7 B=NNJ7 C1=R8 O=K7 R=R9
-.subckt Sommatore1 A=I8 B=NNJ8 C1=R9 O=K8 R=RN10
+.subckt Sommatore1 A=I7 B=NNJ7 C1=R8 O=K7 R=RN9
 #Eliminazione del riporto per il fanout
-.names RN8 RN10 R10
+.names RN7 RN9 R9
 11 1
 
 #File vari
