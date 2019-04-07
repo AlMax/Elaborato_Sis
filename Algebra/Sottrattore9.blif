@@ -1,0 +1,51 @@
+.model Sot9
+
+.inputs I8 I7 I6 I5 I4 I3 I2 I1 I0 J8 J7 J6 J5 J4 J3 J2 J1 J0
+.outputs K8 K7 K6 K5 K4 K3 K2 K1 K0 R10
+
+#Costante 1 e due per lo zero
+.names UNO
+1
+.names ZERO
+.names R1
+
+#Complementare del secondo input
+.subckt Comp1 A=J0 O=NJ0
+.subckt Comp1 A=J1 O=NJ1
+.subckt Comp1 A=J2 O=NJ2
+.subckt Comp1 A=J3 O=NJ3
+.subckt Comp1 A=J4 O=NJ4
+.subckt Comp1 A=J5 O=NJ5
+.subckt Comp1 A=J6 O=NJ6
+.subckt Comp1 A=J7 O=NJ7
+.subckt Comp1 A=J8 O=NJ8
+
+#Aggiungo 1 per avere il negativo giusto
+.subckt Sommatore1 A=NJ0 B=UNO C1=R1 O=NNJ0 R=RN0
+.subckt Sommatore1 A=NJ1 B=ZERO C1=RN0 O=NNJ1 R=RN1
+.subckt Sommatore1 A=NJ2 B=ZERO C1=RN1 O=NNJ2 R=RN2
+.subckt Sommatore1 A=NJ3 B=ZERO C1=RN2 O=NNJ3 R=RN3
+.subckt Sommatore1 A=NJ4 B=ZERO C1=RN3 O=NNJ4 R=RN4
+.subckt Sommatore1 A=NJ5 B=ZERO C1=RN4 O=NNJ5 R=RN5
+.subckt Sommatore1 A=NJ6 B=ZERO C1=RN5 O=NNJ6 R=RN6
+.subckt Sommatore1 A=NJ7 B=ZERO C1=RN6 O=NNJ7 R=RN7
+.subckt Sommatore1 A=NJ8 B=ZERO C1=RN7 O=NNJ8 R=RN8
+#Riporti a causa della somma
+.subckt Sommatore1 A=I0 B=NNJ0 C1=R1 O=K0 R=R2
+.subckt Sommatore1 A=I1 B=NNJ1 C1=R2 O=K1 R=R3
+.subckt Sommatore1 A=I2 B=NNJ2 C1=R3 O=K2 R=R4
+.subckt Sommatore1 A=I3 B=NNJ3 C1=R4 O=K3 R=R5
+.subckt Sommatore1 A=I4 B=NNJ4 C1=R5 O=K4 R=R6
+.subckt Sommatore1 A=I5 B=NNJ5 C1=R6 O=K5 R=R7
+.subckt Sommatore1 A=I6 B=NNJ6 C1=R7 O=K6 R=R8
+.subckt Sommatore1 A=I7 B=NNJ7 C1=R8 O=K7 R=R9
+.subckt Sommatore1 A=I8 B=NNJ8 C1=R9 O=K8 R=RN10
+#Eliminazione del riporto per il fanout
+.names RN8 RN10 R10
+11 1
+
+#File vari
+.search ../Algebra/Complementare.blif
+.search ../Algebra/Sommatore1.blif
+
+.end
