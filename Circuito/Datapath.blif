@@ -1,0 +1,27 @@
+.model Datapath
+
+.inputs FOI FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
+.outputs OI ERR2 ERR1 ERR0 GA GB GC GD GE GF NA3 NA2 NA1 NA0 NB3 NB2 NB1 NB0 NC3 NC2 NC1 NC0 NE3 NE2 NE1 NE0 NF3 NF2 NF1 NF0
+
+#Contatore NA, aumenta all'aprirsi del gate A (FGA); Counter: NA3 NA2 NA1 NA0
+.subckt ContatoreNA SA=FGA ONA3=NA3 ONA2=NA2 ONA1=NA1 ONA0=NA0
+
+#Contatore NB, aumenta all'aprirsi del gate B (FGB); Counter: NB3 NB2 NB1 NB0 ; Errore101: ERRB2 ERRB1 ERRB0
+.subckt ContatoreNB SB=FGB ONB3=NB3 ONB2=NB2 ONB1=NB1 ONB0=NB0 OEB2=ERRB2 OEB1=ERRB1 OEB0=ERRB0
+
+#Contatore NC, aumenta all'aprirsi del gate C (FGC); Counter: NC3 NC2 NC1 NC0 
+.subckt ContatoreNC SC=FGC ONC3=NC3 ONC2=NC2 ONC1=NC1 ONC0=NC0
+
+#Contatore NE, aumenta all'aprirsi del gate E (FGE); Counter: NE3 NE2 NE1 NE0 ; Errore110: ERRE2 ERRE1 ERRE0
+.subckt ContatoreNE SE=FGE ONE3=NE3 ONE2=NE2 ONE1=NE1 ONE0=NE0 OEE2=ERRE2 OEE1=ERRE1 OEE0=ERRE0
+
+#Contatore NF, aumenta all'aprirsi del gate F (FGF); Counter: NF3 NF2 NF1 NF0
+.subckt ContatoreNF SF=FGF ONF3=NF3 ONF2=NF2 ONF1=NF1 ONF0=NF0
+
+.search ../Contatori/NA.blif
+.search ../Contatori/NB.blif
+.search ../Contatori/NC.blif
+.search ../Contatori/NE.blif
+.search ../Contatori/NF.blif
+
+.end
