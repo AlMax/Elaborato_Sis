@@ -1,0 +1,15 @@
+.model Som6
+
+.inputs A5 A4 A3 A2 A1 A0 B5 B4 B3 B2 B1 B0 C6
+.outputs O5 O4 O3 O2 O1 O0 COUT
+
+.subckt Sommatore1 A=A0 B=B0 C1=C6 O=O0 R=C0
+.subckt Sommatore1 A=A1 B=B1 C1=C0 O=O1 R=C01
+.subckt Sommatore1 A=A2 B=B2 C1=C01 O=O2 R=C02
+.subckt Sommatore1 A=A3 B=B3 C1=C02 O=O3 R=C03
+.subckt Sommatore1 A=A4 B=B4 C1=C03 O=O4 R=C04
+.subckt Sommatore1 A=A5 B=B5 C1=C04 O=O5 R=COUT
+
+.search ../Algebra/Sommatore1.blif
+
+.end

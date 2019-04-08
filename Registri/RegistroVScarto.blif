@@ -1,0 +1,15 @@
+.model RegVS
+
+.inputs A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O7 O6 O5 O4 O3 O2 O1 O0 
+.subckt Registro A=A7 O=O7
+.subckt Registro A=A6 O=O6
+.subckt Registro A=A5 O=O5
+.subckt Registro A=A4 O=O4
+.subckt Registro A=A3 O=O3
+.subckt Registro A=A2 O=O2
+.subckt Registro A=A1 O=O1
+.subckt Registro A=A0 O=O0
+
+.search ../Registri/Registro.blif
+.end

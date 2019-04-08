@@ -1,0 +1,19 @@
+.model Mag10
+
+.inputs I9 I8 I7 I6 I5 I4 I3 I2 I1 I0
+.outputs E
+
+#I9 ed I8 non servono a niente, sono utlizzati nel programma per scartare delle variabili
+.names I9 I8 I7 I6 I5 I4 I3 I2 I1 I0 E
+--11111111 1
+0011001000 1
+1011001000 1
+0111001000 1
+1111001000 1
+--11--1--1 1
+--11--1-1- 1
+--11--11-- 1
+--11-11--- 1
+--111-1--- 1
+
+.end

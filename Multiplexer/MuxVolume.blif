@@ -1,0 +1,19 @@
+.model MuxV
+
+.inputs S V5 V4 V3 V2 V1 V0
+.outputs VO5 VO4 VO3 VO2 VO1 VO0
+
+.names S V0 VO0
+11 1
+.names S V1 VO1
+11 1
+.names S V2 VO2
+11 1
+.names S V3 VO3
+11 1
+.names S V4 VO4
+11 1
+.names S V5 VO5
+11 1
+
+.end
