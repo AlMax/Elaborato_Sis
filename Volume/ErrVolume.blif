@@ -1,10 +1,12 @@
 .model ErrV
 
-.inputs GD VI5 VI4 VI3 VI2 VI1 VI0 VOUT5 VOUT4 VOUT3 VOUT2 VOUT1 VOUT0
+.inputs GD VOUT5 VOUT4 VOUT3 VOUT2 VOUT1 VOUT0
 .outputs Err2 Err1 Err0
 
 #Costante zero
 .names ZERO
+
+.subckt RegVolumi A5=ZERO A4=ZERO A3=ZERO A2=ZERO A1=ZERO A0=ZERO O5=VI5 O4=VI4 O3=VI3 O2=VI2 O1=VI1 O0=VI0 
 
 #Sfrutto il Mux per vedere se il gate D è aperto e quindi se sommare 0 o il volume in entrata
 .subckt MuxV S=GD V5=VI5 V4=VI4 V3=VI3 V2=VI2 V1=VI1 V0=VI0 VO5=VS5 VO4=VS4 VO3=VS3 VO2=VS2 VO1=VS1 VO0=VS0
@@ -30,6 +32,7 @@
 .search ../Registri/RegistroVScarto.blif
 .search ../Algebra/Sommatore8.blif
 .search ../Errori/Volume200.blif
+.search ../Registri/RegistroVolume.blif
 .search ../Multiplexer/MuxErr200.blif
 
 .end
