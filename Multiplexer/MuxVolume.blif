@@ -1,19 +1,32 @@
 .model MuxV
 
-.inputs S V5 V4 V3 V2 V1 V0
-.outputs VO5 VO4 VO3 VO2 VO1 VO0
+.inputs S VI5 VI4 VI3 VI2 VI1 VI0 VO5 VO4 VO3 VO2 VO1 VO0
+.outputs VIN5 VIN4 VIN3 VIN2 VIN1 VIN0 VOUT5 VOUT4 VOUT3 VOUT2 VOUT1 VOUT0
 
-.names S V0 VO0
+.names S VI0 VIN0
 11 1
-.names S V1 VO1
+.names S VI1 VIN1
 11 1
-.names S V2 VO2
+.names S VI2 VIN2
 11 1
-.names S V3 VO3
+.names S VI3 VIN3
 11 1
-.names S V4 VO4
+.names S VI4 VIN4
 11 1
-.names S V5 VO5
+.names S VI5 VIN5
+11 1
+
+.names S VO0 VOUT0
+11 1
+.names S VO1 VOUT1
+11 1
+.names S VO2 VOUT2
+11 1
+.names S VO3 VOUT3
+11 1
+.names S VO4 VOUT4
+11 1
+.names S VO5 VOUT5
 11 1
 
 .end

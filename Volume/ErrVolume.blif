@@ -1,38 +1,40 @@
 .model ErrV
 
-.inputs GD VOUT5 VOUT4 VOUT3 VOUT2 VOUT1 VOUT0
+.inputs GD V5 V4 V3 V2 V1 V0
 .outputs Err2 Err1 Err0
 
 #Costante zero
 .names ZERO
 
-.subckt RegVolumi A5=ZERO A4=ZERO A3=ZERO A2=ZERO A1=ZERO A0=ZERO O5=VI5 O4=VI4 O3=VI3 O2=VI2 O1=VI1 O0=VI0 
+#Lo uso per poter utilizzare il volumeIN ed OUT, che sono a due cicli diversi
+.subckt RegVolumi A5=V5 A4=V4 A3=V3 A2=V2 A1=V1 A0=V0 O5=RV5 O4=RV4 O3=RV3 O2=RV2 O1=RV1 O0=RV0 
 
-#Sfrutto il Mux per vedere se il gate D è aperto e quindi se sommare 0 o il volume in entrata
-.subckt MuxV S=GD V5=VI5 V4=VI4 V3=VI3 V2=VI2 V1=VI1 V0=VI0 VO5=VS5 VO4=VS4 VO3=VS3 VO2=VS2 VO1=VS1 VO0=VS0
+#A seconda di GD, vedo se fare gli scarti o no(Manetenere i valori dei volumi o azzerarli)
+.subckt MuxV S=GD VI5=RV5 VI4=RV4 VI3=RV3 VI2=RV2 VI1=RV1 VI0=RV0 VO5=V5 VO4=V4 VO3=V3 VO2=V2 VO1=V1 VO0=V0 VIN5=VIN5 VIN4=VIN4 VIN3=VIN3 VIN2=VIN2 VIN1=VIN1 VIN0=VIN0 VOUT5=VOUT5 VOUT4=VOUT4 VOUT3=VOUT3 VOUT2=VOUT2 VOUT1=VOUT1 VOUT0=VOUT0
 
-#Calcolo lo scarto
-.subckt Sot8 I7=ZERO I6=ZERO I5=VS5 I4=VS4 I3=VS3 I2=VS2 I1=VS1 I0=VS0 J7=ZERO J6=ZERO J5=VOUT5 J4=VOUT4 J3=VOUT3 J2=VOUT2 J1=VOUT1 J0=VOUT0 K7=SCRT7 K6=SCRT6 K5=SCRT5 K4=SCRT4 K3=SCRT3 K2=SCRT2 K1=SCRT1 K0=SCRT0 R9=SCRTR
+#Sotrrazione tra VIN e VOUT; calcolo dello scarto
+.subckt Sot8 I7=ZERO I6=ZERO I5=VIN5 I4=VIN4 I3=VIN3 I2=VIN2 I1=VIN1 I0=VIN0 J7=ZERO J6=ZERO J5=VOUT5 J4=VOUT4 J3=VOUT3 J2=VOUT2 J1=VOUT1 J0=VOUT0 K7=SCRT7 K6=SCRT6 K5=SCRT5 K4=SCRT4 K3=SCRT3 K2=SCRT2 K1=SCRT1 K0=SCRT0 R9=SCRTR
+
+#Prelevo il valore precedente dello scarto e metto quello nuovodal registro delgi scarti
+.subckt RegVS A7=Reg7 A6=Reg6 A5=Reg5 A4=Reg4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 O7=RegS7 O6=RegS6 O5=RegS5 O4=RegS4 O3=RegS3 O2=RegS2 O1=RegS1 O0=RegS0 
 
 #Sommo il valore dei scarti attuali con i precedenti
-.subckt Som8 A7=SCRT7 A6=SCRT6 A5=SCRT5 A4=SCRT4 A3=SCRT3 A2=SCRT2 A1=SCRT1 A0=SCRT0 B7=Reg7 B6=Reg6 B5=Reg5 B4=Reg4 B3=Reg3 B2=Reg2 B1=Reg1 B0=Reg0 C6=ZERO O7=SOM7 O6=SOM6 O5=SOM5 O4=SOM4 O3=SOM3 O2=SOM2 O1=SOM1 O0=SOM0 COUT=SOMR
-
-#Salvo e prelevo dal registro
-.subckt RegVS A7=SOM7 A6=SOM6 A5=SOM5 A4=SOM4 A3=SOM3 A2=SOM2 A1=SOM1 A0=SOM0 O7=Reg7 O6=Reg6 O5=Reg5 O4=Reg4 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0 
+.subckt Som8 A7=SCRT7 A6=SCRT6 A5=SCRT5 A4=SCRT4 A3=SCRT3 A2=SCRT2 A1=SCRT1 A0=SCRT0 B7=RegS7 B6=RegS6 B5=RegS5 B4=RegS4 B3=RegS3 B2=RegS2 B1=RegS1 B0=RegS0 C6=ZERO O7=Reg7 O6=Reg6 O5=Reg5 O4=Reg4 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0 COUT=SOMR
 
 #Uso I9 ed I8 per scartare dei riporti inutili,poi vedo se lo scarto è maggiore di 200
-.subckt Mag10 I9=SOMR I8=SCRTR I7=SOM7 I6=SOM6 I5=SOM5 I4=SOM4 I3=SOM3 I2=SOM2 I1=SOM1 I0=SOM0 E=ERR
+.subckt Mag10 I9=SOMR I8=SCRTR I7=Reg7 I6=Reg6 I5=Reg5 I4=Reg4 I3=Reg3 I2=Reg2 I1=Reg1 I0=Reg0 E=ERR
 
 #Mux per l'errore
 .subckt Err010 S=ERR O2=Err2 O1=Err1 O0=Err0
 
-#File vari
+.search ../Registri/RegistroVolume.blif
 .search ../Multiplexer/MuxVolume.blif
 .search ../Algebra/Sottrattore8.blif
 .search ../Registri/RegistroVScarto.blif
 .search ../Algebra/Sommatore8.blif
 .search ../Errori/Volume200.blif
-.search ../Registri/RegistroVolume.blif
 .search ../Multiplexer/MuxErr200.blif
 
 .end
+
+
