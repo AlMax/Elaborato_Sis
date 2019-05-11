@@ -1,106 +1,107 @@
 .model FSM
-.inputs SOFF SA SB SC SD SE SF
+.inputs IN2 IN1 IN0
 .outputs IO FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
-.latch    [1657] LatchOut_v7   1
-.latch    [1658] LatchOut_v8   1
-.latch    [1659] LatchOut_v9   0
+.latch    [6528] LatchOut_v3   1
+.latch    [6529] LatchOut_v4   1
+.latch    [6530] LatchOut_v5   0
 .start_kiss
-.i 7
+.i 3
 .o 10
 .p 15
 .s 5
 .r S1
-------- S0 S2 1000100000
-0------ S2 S0 1000010000
-1------ S2 S3 1000001000
-0------ S3 S1 0001000000
-1------ S3 S4 1000000100
-000---- S1 S1 0000000000
-001---- S1 S1 0000000000
-010---- S1 S1 0000000000
-011---- S1 S1 0000000000
-100---- S1 S1 0000000000
-101---- S1 S1 0000000000
-110---- S1 S1 0000000000
-111---- S1 S2 1000100000
-1------ S4 S0 1000000001
-0------ S4 S0 1000000010
+--- S0 S2 1000100000
+0-- S2 S0 1000010000
+1-- S2 S3 1000001000
+0-- S3 S1 0001000000
+1-- S3 S4 1000000100
+000 S1 S1 0000000000
+001 S1 S1 0000000000
+010 S1 S1 0000000000
+011 S1 S1 0000000000
+100 S1 S1 0000000000
+101 S1 S1 0000000000
+110 S1 S1 0000000000
+111 S1 S2 1000100000
+1-- S4 S0 1000000001
+0-- S4 S0 1000000010
 .end_kiss
-.latch_order LatchOut_v7 LatchOut_v8 LatchOut_v9
+.latch_order LatchOut_v3 LatchOut_v4 LatchOut_v5
 .code S0 100
 .code S2 010
 .code S3 101
 .code S1 110
 .code S4 111
-.names FGA [1657]
+.names FGA [6528]
 0 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 [1658]
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 [6529]
 -0- 1
 1-0 1
-.names FGC FGD [1659]
+.names FGC FGD [6530]
 1- 1
 -1 1
-.names LatchOut_v7 LatchOut_v9 FERR0 FGA IO
+.names LatchOut_v3 LatchOut_v5 FERR0 FGA IO
 0--- 1
 ---1 1
 -10- 1
 .names FERR2
 .names FERR1
-.names SOFF LatchOut_v8 LatchOut_v9 FERR0
+.names IN2 LatchOut_v4 LatchOut_v5 FERR0
 001 1
-.names SOFF SA SB LatchOut_v7 LatchOut_v8 LatchOut_v9 FGA
+.names IN2 IN1 IN0 LatchOut_v3 LatchOut_v4 LatchOut_v5 FGA
 ----00 1
 1111-0 1
-.names SOFF LatchOut_v7 FGB
+.names IN2 LatchOut_v3 FGB
 00 1
-.names SOFF LatchOut_v7 FGC
+.names IN2 LatchOut_v3 FGC
 10 1
-.names SOFF LatchOut_v8 LatchOut_v9 FGD
+.names IN2 LatchOut_v4 LatchOut_v5 FGD
 101 1
-.names SOFF LatchOut_v8 LatchOut_v9 FGE
+.names IN2 LatchOut_v4 LatchOut_v5 FGE
 011 1
-.names SOFF LatchOut_v8 LatchOut_v9 FGF
+.names IN2 LatchOut_v4 LatchOut_v5 FGF
 111 1
 .exdc 
-.inputs SOFF SA SB SC SD SE SF LatchOut_v7 LatchOut_v8 LatchOut_v9
-.outputs [1657] [1658] [1659] IO FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 [1657]
+#IN2 IN1 IN0
+.inputs LatchOut_v3 LatchOut_v4 LatchOut_v5
+.outputs [6528] [6529] [6530] IO FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 [6528]
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 [1658]
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 [6529]
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 [1659]
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 [6530]
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 IO
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 IO
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FERR2
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FERR2
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FERR1
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FERR1
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FERR0
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FERR0
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGA
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGA
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGB
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGB
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGC
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGC
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGD
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGD
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGE
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGE
 00- 1
 0-1 1
-.names LatchOut_v7 LatchOut_v8 LatchOut_v9 FGF
+.names LatchOut_v3 LatchOut_v4 LatchOut_v5 FGF
 00- 1
 0-1 1
 .end
