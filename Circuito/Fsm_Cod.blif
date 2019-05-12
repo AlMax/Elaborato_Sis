@@ -1,0 +1,129 @@
+.model FSM
+.inputs ON IN2 IN1 IN0
+.outputs IO FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
+.latch    [4793] LatchOut_v4   0
+.latch    [4794] LatchOut_v5   1
+.latch    [4795] LatchOut_v6   0
+.start_kiss
+.i 4
+.o 10
+.p 19
+.s 5
+.r S1
+0--- S0 S1 0000000000
+1--- S0 S2 1000100000
+-000 S1 S1 0000000000
+-001 S1 S1 0000000000
+-010 S1 S1 0000000000
+-011 S1 S1 0000000000
+-100 S1 S1 0000000000
+-101 S1 S1 0000000000
+-110 S1 S1 0000000000
+1111 S1 S2 1000100000
+10-- S2 S0 1000010000
+0--- S2 S1 0000000000
+11-- S2 S3 1000001000
+-0-- S3 S1 0001000000
+11-- S3 S4 1000000100
+01-- S3 S1 0000000000
+11-- S4 S0 1000000001
+10-- S4 S0 1000000010
+0--- S4 S1 0000000000
+.end_kiss
+.latch_order LatchOut_v4 LatchOut_v5 LatchOut_v6
+.code S0 011
+.code S1 010
+.code S2 110
+.code S3 111
+.code S4 000
+.names FGA FGC [4793]
+1- 1
+-1 1
+.names FGD [4794]
+0 1
+.names [4820] [4821] [4795]
+1- 1
+-1 1
+.names [4795] FERR0 FGA [4819] IO
+1--- 1
+--1- 1
+-0-1 1
+.names FERR2
+.names FERR1
+.names IN2 LatchOut_v4 LatchOut_v6 FERR0
+011 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGA
+1---0-1 1
+-111010 1
+.names IN2 [4821] FGB
+01 1
+.names IN2 [4821] FGC
+11 1
+.names IN2 LatchOut_v6 [4819] FGD
+111 1
+.names IN2 [4820] FGE
+01 1
+.names IN2 [4820] FGF
+11 1
+.names ON LatchOut_v4 [4819]
+11 1
+.names ON LatchOut_v5 [4820]
+10 1
+.names LatchOut_v6 [4819] [4821]
+01 1
+.exdc 
+.inputs ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6
+.outputs [4793] [4794] [4795] IO FERR2 FERR1 FERR0 FGA FGB FGC FGD FGE FGF
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 [4793]
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 [4794]
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 [4795]
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 IO
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FERR2
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FERR1
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FERR0
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGA
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGB
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGC
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGD
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGE
+----10- 1
+-----01 1
+0111010 1
+.names ON IN2 IN1 IN0 LatchOut_v4 LatchOut_v5 LatchOut_v6 FGF
+----10- 1
+-----01 1
+0111010 1
+.end

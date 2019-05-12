@@ -1,0 +1,12 @@
+.model RegIO
+
+.inputs ErrIO FIO 
+.outputs IO 
+
+.names ErrIO FIO RIO
+11 1
+
+.subckt Registro A=RIO O=IO
+
+.search ../Registri/Registro.blif
+.end

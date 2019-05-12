@@ -1,6 +1,6 @@
 .model ContatoreNA
 
-.inputs SA
+.inputs ON SA
 .outputs ONA3 ONA2 ONA1 ONA0
 
 .names ZERO
@@ -9,7 +9,7 @@
 .subckt MuxG S=SA O3=SUM3 O2=SUM2 O1=SUM1 O0=SUM0
 
 #Prelevo il valore del registro e ci metto il risultato della somma
-.subckt RegA A3=ONA3 A2=ONA2 A1=ONA1 A0=ONA0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
+.subckt RegA ON=ON A3=ONA3 A2=ONA2 A1=ONA1 A0=ONA0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
 
 #Somma (4bit) del valore del registro e del mux
 .subckt Sommatore4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 B3=SUM3 B2=SUM2 B1=SUM1 B0=SUM0 C4=ZERO O3=NA3 O2=NA2 O1=NA1 O0=NA0 COUT=RNA

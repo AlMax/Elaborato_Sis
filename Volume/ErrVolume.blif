@@ -1,13 +1,13 @@
 .model ErrV
 
-.inputs GD V5 V4 V3 V2 V1 V0
+.inputs ON GD V5 V4 V3 V2 V1 V0
 .outputs Err2 Err1 Err0
 
 #Costante zero
 .names ZERO
 
 #Lo uso per poter utilizzare il volumeIN ed OUT, che sono a due cicli diversi
-.subckt RegVolumi A5=V5 A4=V4 A3=V3 A2=V2 A1=V1 A0=V0 O5=RV5 O4=RV4 O3=RV3 O2=RV2 O1=RV1 O0=RV0 
+.subckt RegVolumi ON=ON A5=V5 A4=V4 A3=V3 A2=V2 A1=V1 A0=V0 O5=RV5 O4=RV4 O3=RV3 O2=RV2 O1=RV1 O0=RV0 
 
 #A seconda di GD, vedo se fare gli scarti o no(Manetenere i valori dei volumi o azzerarli)
 .subckt MuxV S=GD VI5=RV5 VI4=RV4 VI3=RV3 VI2=RV2 VI1=RV1 VI0=RV0 VO5=V5 VO4=V4 VO3=V3 VO2=V2 VO1=V1 VO0=V0 VIN5=VIN5 VIN4=VIN4 VIN3=VIN3 VIN2=VIN2 VIN1=VIN1 VIN0=VIN0 VOUT5=VOUT5 VOUT4=VOUT4 VOUT3=VOUT3 VOUT2=VOUT2 VOUT1=VOUT1 VOUT0=VOUT0
@@ -16,7 +16,7 @@
 .subckt Sot8 I7=ZERO I6=ZERO I5=VIN5 I4=VIN4 I3=VIN3 I2=VIN2 I1=VIN1 I0=VIN0 J7=ZERO J6=ZERO J5=VOUT5 J4=VOUT4 J3=VOUT3 J2=VOUT2 J1=VOUT1 J0=VOUT0 K7=SCRT7 K6=SCRT6 K5=SCRT5 K4=SCRT4 K3=SCRT3 K2=SCRT2 K1=SCRT1 K0=SCRT0 R9=SCRTR
 
 #Prelevo il valore precedente dello scarto e metto quello nuovodal registro delgi scarti
-.subckt RegVS A7=Reg7 A6=Reg6 A5=Reg5 A4=Reg4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 O7=RegS7 O6=RegS6 O5=RegS5 O4=RegS4 O3=RegS3 O2=RegS2 O1=RegS1 O0=RegS0 
+.subckt RegVS ON=ON A7=Reg7 A6=Reg6 A5=Reg5 A4=Reg4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 O7=RegS7 O6=RegS6 O5=RegS5 O4=RegS4 O3=RegS3 O2=RegS2 O1=RegS1 O0=RegS0 
 
 #Sommo il valore dei scarti attuali con i precedenti
 .subckt Som8 A7=SCRT7 A6=SCRT6 A5=SCRT5 A4=SCRT4 A3=SCRT3 A2=SCRT2 A1=SCRT1 A0=SCRT0 B7=RegS7 B6=RegS6 B5=RegS5 B4=RegS4 B3=RegS3 B2=RegS2 B1=RegS1 B0=RegS0 C6=ZERO O7=Reg7 O6=Reg6 O5=Reg5 O4=Reg4 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0 COUT=SOMR

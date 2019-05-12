@@ -1,6 +1,6 @@
 .model ContatoreNC
 
-.inputs SC
+.inputs ON SC
 .outputs ONC3 ONC2 ONC1 ONC0
 
 .names ZERO
@@ -9,7 +9,7 @@
 .subckt MuxG S=SC O3=SUM3 O2=SUM2 O1=SUM1 O0=SUM0
 
 #Prelevo il valore del registro e ci metto il risultato della somma
-.subckt RegC A3=ONC3 A2=ONC2 A1=ONC1 A0=ONC0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
+.subckt RegC ON=ON A3=ONC3 A2=ONC2 A1=ONC1 A0=ONC0 O3=Reg3 O2=Reg2 O1=Reg1 O0=Reg0
 
 #Somma (4bit) del valore del registro e del mux
 .subckt Sommatore4 A3=Reg3 A2=Reg2 A1=Reg1 A0=Reg0 B3=SUM3 B2=SUM2 B1=SUM1 B0=SUM0 C4=ZERO O3=NC3 O2=NC2 O1=NC1 O0=NC0 COUT=RNC

@@ -1,11 +1,21 @@
 .model RegB
 
-.inputs A3 A2 A1 A0
+.inputs ON A3 A2 A1 A0
 .outputs O3 O2 O1 O0 
-.subckt Registro A=A3 O=O3
-.subckt Registro A=A2 O=O2
-.subckt Registro A=A1 O=O1
-.subckt Registro A=A0 O=O0
+
+.names ON A3 B3
+11 1
+.names ON A2 B2
+11 1
+.names ON A1 B1
+11 1
+.names ON A0 B0
+11 1
+
+.subckt Registro A=B3 O=O3
+.subckt Registro A=B2 O=O2
+.subckt Registro A=B1 O=O1
+.subckt Registro A=B0 O=O0
 
 .search ../Registri/Registro.blif
 .end

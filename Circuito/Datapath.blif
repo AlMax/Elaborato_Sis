@@ -1,22 +1,22 @@
 .model Datapath
 
-.inputs FGA FGB FGC FGE FGF
+.inputs ON FGA FGB FGC FGE FGF
 .outputs ERRB2 ERRB1 ERRB0 ERRE2 ERRE1 ERRE0 DNA3 DNA2 DNA1 DNA0 DNB3 DNB2 DNB1 DNB0 DNC3 DNC2 DNC1 DNC0 DNE3 DNE2 DNE1 DNE0 DNF3 DNF2 DNF1 DNF0
 
 #Contatore NA, aumenta all'aprirsi del gate A (FGA); Counter: NA3 NA2 NA1 NA0
-.subckt ContatoreNA SA=FGA ONA3=DNA3 ONA2=DNA2 ONA1=DNA1 ONA0=DNA0
+.subckt ContatoreNA ON=ON SA=FGA ONA3=DNA3 ONA2=DNA2 ONA1=DNA1 ONA0=DNA0
 
 #Contatore NB, aumenta all'aprirsi del gate B (FGB); Counter: NB3 NB2 NB1 NB0 ; Errore101: ERRB2 ERRB1 ERRB0
-.subckt ContatoreNB SB=FGB ONB3=DNB3 ONB2=DNB2 ONB1=DNB1 ONB0=DNB0 OEB2=ERRB2 OEB1=ERRB1 OEB0=ERRB0
+.subckt ContatoreNB ON=ON SB=FGB ONB3=DNB3 ONB2=DNB2 ONB1=DNB1 ONB0=DNB0 OEB2=ERRB2 OEB1=ERRB1 OEB0=ERRB0
 
 #Contatore NC, aumenta all'aprirsi del gate C (FGC); Counter: NC3 NC2 NC1 NC0 
-.subckt ContatoreNC SC=FGC ONC3=DNC3 ONC2=DNC2 ONC1=DNC1 ONC0=DNC0
+.subckt ContatoreNC ON=ON SC=FGC ONC3=DNC3 ONC2=DNC2 ONC1=DNC1 ONC0=DNC0
 
 #Contatore NE, aumenta all'aprirsi del gate E (FGE); Counter: NE3 NE2 NE1 NE0 ; Errore110: ERRE2 ERRE1 ERRE0
-.subckt ContatoreNE SE=FGE ONE3=DNE3 ONE2=DNE2 ONE1=DNE1 ONE0=DNE0 OEE2=ERRE2 OEE1=ERRE1 OEE0=ERRE0
+.subckt ContatoreNE ON=ON SE=FGE ONE3=DNE3 ONE2=DNE2 ONE1=DNE1 ONE0=DNE0 OEE2=ERRE2 OEE1=ERRE1 OEE0=ERRE0
 
 #Contatore NF, aumenta all'aprirsi del gate F (FGF); Counter: NF3 NF2 NF1 NF0
-.subckt ContatoreNF SF=FGF ONF3=DNF3 ONF2=DNF2 ONF1=DNF1 ONF0=DNF0
+.subckt ContatoreNF ON=ON SF=FGF ONF3=DNF3 ONF2=DNF2 ONF1=DNF1 ONF0=DNF0
 
 .search ../Contatori/NA.blif
 .search ../Contatori/NB.blif
@@ -24,5 +24,6 @@
 .search ../Contatori/NE.blif
 .search ../Contatori/NF.blif
 .search ../Errori/Gestione.blif
+.search ../Multiplexer/MuxReset.blif
 
 .end
