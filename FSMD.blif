@@ -1,0 +1,471 @@
+.model FSMD
+.inputs IN6 IN5 IN4 IN3 IN2 IN1 IN0
+.outputs IO ERR2 ERR1 ERR0 GA GB GC GD GE GF NA3 NA2 NA1 NA0 NB3 NB2 NB1 NB0 \
+NC3 NC2 NC1 NC0 NE3 NE2 NE1 NE0 NF3 NF2 NF1 NF0
+.latch    IO IOR re NIL 0
+.latch    [4793] LatchOut_v4   0
+.latch    [4794] LatchOut_v5   1
+.latch    [4795] LatchOut_v6   0
+.latch    [1111] RV5 re NIL 0
+.latch    [1112] RV4 re NIL 0
+.latch    [1113] RV3 re NIL 0
+.latch    [1114] RV2 re NIL 0
+.latch    [1115] RV1 re NIL 0
+.latch    [1116] RV0 re NIL 0
+.latch    VS7 RegS7 re NIL 0
+.latch    VS6 RegS6 re NIL 0
+.latch    VS5 RegS5 re NIL 0
+.latch    VS4 RegS4 re NIL 0
+.latch    VS3 RegS3 re NIL 0
+.latch    VS2 RegS2 re NIL 0
+.latch    VS1 RegS1 re NIL 0
+.latch    VS0 RegS0 re NIL 0
+.latch    F3 [1696] re NIL 0
+.latch    F2 [1709] re NIL 0
+.latch    F1 [1710] re NIL 0
+.latch    F0 [1711] re NIL 0
+.latch    E3 [1355] re NIL 0
+.latch    E2 [1362] re NIL 0
+.latch    E1 [1364] re NIL 0
+.latch    E0 [1366] re NIL 0
+.latch    C3 [1417] re NIL 0
+.latch    C2 [1424] re NIL 0
+.latch    C1 [1426] re NIL 0
+.latch    [1421] [1428] re NIL 0
+.latch    B3 [1449] re NIL 0
+.latch    B2 [1456] re NIL 0
+.latch    B1 [1458] re NIL 0
+.latch    B0 [1460] re NIL 0
+.latch    AA3 [1482] re NIL 0
+.latch    AA2 [1489] re NIL 0
+.latch    AA1 [1491] re NIL 0
+.latch    AA0 [1493] re NIL 0
+.names RNE [1836] ERR2
+11 1
+00 1
+.names [1238] [1239] [1846] ERR1
+01- 1
+-00 1
+.names [1241] [1846] ERR0
+11 1
+.names IOR IN6 IN5 IN4 LatchOut_v4 LatchOut_v5 LatchOut_v6 GA
+1---0-1 1
+-111010 1
+.names IN6 [1857] GB
+01 1
+.names IN6 [1857] GC
+11 1
+.names DGD IO GD
+11 1
+.names IN6 [1876] GE
+01 1
+.names IN6 [1876] GF
+11 1
+.names [1666] NA3
+1 1
+.names [1667] NA2
+1 1
+.names [1668] NA1
+1 1
+.names RNA [1830] NA0
+1- 1
+-1 1
+.names NB2 RNB [1449] [1456] NB3
+-01- 1
+0-01 1
+.names [1456] [1858] NB2
+11 1
+00 1
+.names [1458] [1851] NB1
+11 1
+00 1
+.names [1679] NC3
+1 1
+.names [1680] NC2
+1 1
+.names [1681] NC1
+1 1
+.names RNC [1831] NC0
+1- 1
+-1 1
+.names NE2 RNE [1355] [1362] NE3
+-01- 1
+0-01 1
+.names [1362] [1859] NE2
+11 1
+00 1
+.names [1364] [1852] NE1
+11 1
+00 1
+.names [1692] NF3
+1 1
+.names [1693] NF2
+1 1
+.names [1694] NF1
+1 1
+.names RNF [1832] NF0
+1- 1
+-1 1
+.names IN6 LatchOut_v6 [1850] DGD
+111 1
+.names ERR1 ERR0 GA DGD [4795] [1238] IO
+0--1-- 1
+0-1--0 1
+00--10 1
+.names [1857] [1876] [4795]
+1- 1
+-1 1
+.names GA GC [4793]
+1- 1
+-1 1
+.names DGD [4794]
+0 1
+.names [1239] RNE [1846] [1238]
+--0 1
+01- 1
+.names ERR RNE [1239]
+01 1
+10 1
+.names RNB [1874] [1241]
+1- 1
+-0 1
+.names Reg7 Reg6 Reg5 Reg3 Reg1 [1833] [1834] [1835] ERR
+111----- 1
+11-----1 1
+11-1--1- 1
+11-101-- 1
+.names SCRT5 [1052] NNJ5 R7
+01- 1
+-01 1
+.names [1052] [1837] SCRT5
+01 1
+10 1
+.names NNJ5 [1861] [1052]
+11 1
+00 1
+.names NNJ4 [1862] [1051]
+11 1
+00 1
+.names SCRT3 [1050] NNJ3 R5
+01- 1
+-01 1
+.names [1050] [1838] SCRT3
+01 1
+10 1
+.names NNJ3 [1863] [1050]
+11 1
+00 1
+.names NNJ2 [1864] [1049]
+11 1
+00 1
+.names SCRT1 [1048] NNJ1 R3
+01- 1
+-01 1
+.names [1048] [1873] SCRT1
+11 1
+00 1
+.names NNJ1 [1865] [1048]
+11 1
+00 1
+.names RV0 [1839] [1877] [1047]
+00- 1
+1-1 1
+.names [1062] [1840] Reg7
+01 1
+10 1
+.names RegS7 [1866] [1062]
+11 1
+00 1
+.names [1061] C05 Reg6
+01 1
+10 1
+.names RN5 [1841] [1061]
+11 1
+00 1
+.names Reg5 [1060] RegS5 C05
+01- 1
+-01 1
+.names [1060] [1842] Reg5
+01 1
+10 1
+.names SCRT5 RegS5 [1060]
+01 1
+10 1
+.names RegS4 [1843] [1059]
+11 1
+00 1
+.names Reg3 [1058] RegS3 C03
+01- 1
+-01 1
+.names [1058] [1844] Reg3
+01 1
+10 1
+.names SCRT3 RegS3 [1058]
+01 1
+10 1
+.names RegS2 [1845] [1057]
+11 1
+00 1
+.names Reg1 [1056] RegS1 C01
+01- 1
+-01 1
+.names [1056] [1867] Reg1
+11 1
+00 1
+.names SCRT1 RegS1 [1056]
+01 1
+10 1
+.names IN5 IO [1111]
+11 1
+.names IN4 IO [1112]
+11 1
+.names IN3 IO [1113]
+11 1
+.names IN2 IO [1114]
+11 1
+.names IN1 IO [1115]
+11 1
+.names IN0 IO [1116]
+11 1
+.names IO [1834] VS0
+11 1
+.names IO Reg1 VS1
+11 1
+.names IO [1833] VS2
+10 1
+.names IO Reg3 VS3
+11 1
+.names IO [1835] VS4
+11 1
+.names IO Reg5 VS5
+11 1
+.names IO Reg6 VS6
+11 1
+.names IO Reg7 VS7
+11 1
+.names IN5 NNJ4 RN3 RN5 NNJ5
+0--0 1
+-010 1
+.names RN3 [1868] NNJ4
+01 1
+10 1
+.names IN3 IN2 NNJ2 RN3 NNJ3
+0--0 1
+-000 1
+.names IN2 IN1 DGD [1839] [1877] NNJ2
+0--0- 1
+011-- 1
+10--1 1
+.names IN1 [1839] [1877] NNJ1
+00- 1
+1-1 1
+.names IN3 IN2 DGD NNJ2 RN3
+--0- 1
+00-0 1
+.names IN5 IN4 DGD RN3 RN5
+--0- 1
+00-1 1
+.names [1449] [1456] [1458] [1851] RNB
+1110 1
+.names [1355] [1362] [1364] [1852] RNE
+1110 1
+.names [1482] [1489] [1491] [1853] RNA
+1110 1
+.names RNA [1667] [1482] [1489] [1666]
+0-1- 1
+-001 1
+.names [1489] [1869] [1667]
+11 1
+00 1
+.names [1491] [1853] [1668]
+11 1
+00 1
+.names GB [1460] NB0
+01 1
+10 1
+.names [1417] [1424] [1426] [1854] RNC
+1110 1
+.names RNC [1680] [1417] [1424] [1679]
+0-1- 1
+-001 1
+.names [1424] [1870] [1680]
+11 1
+00 1
+.names [1426] [1854] [1681]
+11 1
+00 1
+.names GE [1366] NE0
+01 1
+10 1
+.names [1696] [1709] [1710] [1855] RNF
+1110 1
+.names RNF [1693] [1696] [1709] [1692]
+0-1- 1
+-001 1
+.names [1709] [1871] [1693]
+11 1
+00 1
+.names [1710] [1855] [1694]
+11 1
+00 1
+.names NF3 IO F3
+11 1
+.names NF2 IO F2
+11 1
+.names NF1 IO F1
+11 1
+.names NF0 IO F0
+11 1
+.names NE3 IO E3
+11 1
+.names NE2 IO E2
+11 1
+.names NE1 IO E1
+11 1
+.names IO NE0 E0
+11 1
+.names NC3 IO C3
+11 1
+.names NC2 IO C2
+11 1
+.names NC1 IO C1
+11 1
+.names NC0 IO [1421]
+11 1
+.names NB3 IO B3
+11 1
+.names NB2 IO B2
+11 1
+.names NB1 IO B1
+11 1
+.names IO NB0 B0
+11 1
+.names NA3 IO AA3
+11 1
+.names NA2 IO AA2
+11 1
+.names NA1 IO AA1
+11 1
+.names NA0 IO AA0
+11 1
+.names GA [1493] [1830]
+01 1
+10 1
+.names GC [1428] [1831]
+01 1
+10 1
+.names GF [1711] [1832]
+01 1
+10 1
+.names [1057] C01 [1833]
+11 1
+00 1
+.names [1047] RegS0 [1834]
+01 1
+10 1
+.names [1059] C03 [1835]
+01 1
+10 1
+.names [1238] RNB [1836]
+11 1
+00 1
+.names [1051] R5 NNJ4 [1837]
+11- 1
+0-1 1
+.names [1049] R3 NNJ2 [1838]
+11- 1
+0-1 1
+.names IN0 DGD [1839]
+0- 1
+-0 1
+.names [1061] C05 RegS6 [1840]
+11- 1
+0-1 1
+.names R7 RegS6 [1841]
+01 1
+10 1
+.names [1059] C03 RegS4 [1842]
+11- 1
+0-1 1
+.names [1051] R5 [1843]
+11 1
+00 1
+.names [1057] C01 RegS2 [1844]
+11- 1
+0-1 1
+.names [1049] R3 [1845]
+11 1
+00 1
+.names RNB RNE [1846]
+0- 1
+-0 1
+.names IOR LatchOut_v4 [1850]
+11 1
+.names GB [1460] [1851]
+0- 1
+-0 1
+.names GE [1366] [1852]
+0- 1
+-0 1
+.names GA [1493] [1853]
+0- 1
+-0 1
+.names GC [1428] [1854]
+0- 1
+-0 1
+.names GF [1711] [1855]
+0- 1
+-0 1
+.names LatchOut_v6 [1850] [1857]
+01 1
+.names NB1 [1458] [1858]
+1- 1
+-0 1
+.names NE1 [1364] [1859]
+1- 1
+-0 1
+.names DGD RV5 [1861]
+0- 1
+-0 1
+.names DGD RV4 [1862]
+0- 1
+-0 1
+.names DGD RV3 [1863]
+0- 1
+-0 1
+.names DGD RV2 [1864]
+0- 1
+-0 1
+.names DGD RV1 [1865]
+0- 1
+-0 1
+.names R7 RN5 [1866]
+1- 1
+-1 1
+.names [1047] RegS0 [1867]
+0- 1
+-0 1
+.names IN4 DGD [1868]
+0- 1
+-0 1
+.names [1668] [1491] [1869]
+1- 1
+-0 1
+.names [1681] [1426] [1870]
+1- 1
+-0 1
+.names [1694] [1710] [1871]
+1- 1
+-0 1
+.names RV0 [1839] [1873]
+0- 1
+-1 1
+.names IN6 LatchOut_v4 LatchOut_v6 [1874]
+1-- 1
+-0- 1
+--0 1
+.names IOR LatchOut_v5 [1876]
+10 1
+.names IN0 DGD [1877]
+01 1
+.end
